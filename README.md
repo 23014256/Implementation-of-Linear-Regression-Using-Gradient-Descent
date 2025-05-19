@@ -39,12 +39,12 @@ Print the predicted value.
 
 /*
 Program to implement the linear regression using gradient descent.
-Developed by: DHRANI DHARAN K
-RegisterNumber: 212223040036
+Developed by: Suman
+RegisterNumber: 212223240163
 */
 
 Linear Regression Function
-
+```
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
@@ -62,14 +62,14 @@ def linear_regression(X1,y,learning_rate=0.1,num_iters=1000):
         #Update theta using gradient descent
         theta-=learning_rate*(1/len(X1))*X.T.dot(errors)
     return theta
-
+```
 Read Data
-
+```
 data=pd.read_csv("/content/50_Startups.csv")
 data.head()
-
+```
 Scaling
-
+```
 x=(data.iloc[1:,:-2].values)
 x1=x.astype(float)
 
@@ -79,9 +79,9 @@ x1_scaled=scaler.fit_transform(x1)
 y1_scaled=scaler.fit_transform(y)
 print(x)
 print(x1_scaled)
-
+```
 Predicting
-
+```
 theta=linear_regression(x1_scaled,y1_scaled)
 new_data=np.array([165349.2,136897.8,471784.1]).reshape(-1,1)
 new_scaled=scaler.fit_transform(new_data)
@@ -90,7 +90,7 @@ prediction=prediction.reshape(-1,1)
 pre=scaler.inverse_transform(prediction)
 print(prediction)
 print(f"Predicted valeue: {pre}")
-
+```
 
 
 ## Output:
